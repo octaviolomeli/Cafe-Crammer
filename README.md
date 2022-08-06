@@ -16,5 +16,5 @@
 <hr>
 <details>
   <summary>Image of the website</summary>
-  <img src="https://github.com/octaviolomeli/cafe-crammer/main/screenshot.png?raw=true" alt="Photo of website">
+  <img src="https://github.com/octaviolomeli/cafe-crammer/blob/main/screenshot.png?raw=true" alt="Photo of website">
 </details>
