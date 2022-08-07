@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/coffee.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Café Crammer</title>
+</head>
+
+<body>
+    <div class="berkeley-image">
+      <div class="top">
+        <h1>Café Crammer</h1>
+        <p>Find cafés that meet your needs</p>
+       </div>
+    </div>
+    <div class="bottom">
+        <div class="container">
+            <p id="filter">
+                <br>
+                Things to note
+            </p>
+            <ul>
+                <li>Only cafes located in the city of Berkeley are shown.</li>
+                <li>Data is provided by Yelp. Check the opening hours of each store by clicking on their names.</li>
+            </ul>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <p id="filter">
+                        Your location
+                    </p>
+                    <form action="/" method="POST">
+                        <div class="filters">
+                            <input type="text" name="location" placeholder="Type location here..." required>
+                        </div>
+
+                        <!--Filter Section-->
+                        <p id="filter">
+                            <br>Filters
+                        </p>
+                        <!-- Filters -->
+                        <select class="drop-down" name="distance">
+                            <option value=".5">.5 or less</option>
+                            <option value="1">1 or less</option>
+                            <option value="12">1 to 2</option>
+                            <option value="Any">Any</option>
+                        </select>
+                        <span class="a-filter">mile(s) away</span><br>
+                        <!-- Other filter -->
+                        <span class="a-filter">Price Level:</span>
+                        <select class="drop-down" name="price">
+                            <option value="$">$</option>
+                            <option value="$$">$$</option>
+                            <option value="$$$">$$$</option>
+                            <option value="$$2">$ or $$</option>
+                            <option value="Any">Any</option>
+                        </select><br>
+                        <!-- Other filter -->
+                        <span class="a-filter">Rating:</span>
+                        <select class="drop-down" name="rating">
+                            <option value="5">5 only</option>
+                            <option value="45">4 to 5</option>
+                            <option value="35">3 to 5</option>
+                            <option value="Any">Any</option>
+                        </select><br>
+                        <!-- Other filter -->
+                        <span class="a-filter">WiFi:</span>
+                        <select class="drop-down" name="wifi">
+                            <option value="true">Yes</option>
+                            <option value="Any">Doesn't matter</option>
+                        </select><br><br>
+                        <!-- Submit -->
+                        <span id="location_popup">Enter a location before filtering</span>
+                        <button id="search-button" type="submit">Search</button>
+                    </form>
+                </div>
+                <!-- End left side -->
+                <!-- Start right side -->
+                <div class="col-md-8">
+                    <!-- Start result box -->
+                    <div id="num-results">
+                        <%-nums %>
+                    </div>
+                    <div class="results-box container">
+                        <%- cafes %>
+                    </div><!-- End result box -->
+                </div><!-- End right side -->
+            </div> <!-- End bottom side -->
+        </div>
+    </div>
+</body>
+</html>
