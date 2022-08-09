@@ -2,7 +2,8 @@
 ### A web application for users to search cafes with various filters in the city of Berkeley.
 <div> 
   Filters include distance, price, rating, and has wifi. 
-  Upon submitting their preferences, users will be shown information about matching cafes in a row format.
+  While the user types in a location in the input bar, they are given predictions of locations they are typing by 
+  the Autocomplete library from Google Places API. In addition, the predictions are restricted to the city of Berkeley, providing a smooth experience for users.
 </div>
 <hr>
 <details>
