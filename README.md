@@ -11,6 +11,7 @@
   </summary>
   <ul>
       <li>Yelp API</li>
+      <li>Google Places API</li>
     </ul>
 </details>
 <hr>
