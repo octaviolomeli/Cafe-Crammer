@@ -3,7 +3,7 @@
 <div> 
   Filters include distance, price, rating, and has wifi. 
   While the user types in a location in the input bar, they are given predictions of locations they are typing by 
-  the Autocomplete library from Google Places API. In addition, the predictions are restricted to the city of Berkeley, providing a smooth experience for users.
+  the Autocomplete library from the Google Places API. In addition, the predictions are restricted to the city of Berkeley.
 </div>
 <hr>
 <details>
