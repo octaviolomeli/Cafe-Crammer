@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { createRoot } from "react-dom/client";
 import './App.css';
@@ -11,43 +12,45 @@ const information = [
 [{value:"true", text:"Yes"}, {value:"Any", text: "Doesn't matter"}]
 ]
 
-function search() {
-  let location = document.getElementById("autocomplete").value;
-  let distance = document.getElementsByName("distance")[0]
-  distance = distance.options[distance.selectedIndex].value;
-  let price = document.getElementsByName("price")[0]
-  price = price.options[price.selectedIndex].value;
-  let rating = document.getElementsByName("rating")[0]
-  rating = rating.options[rating.selectedIndex].value;
-  let wifi = document.getElementsByName("wifi")[0]
-  wifi = wifi.options[wifi.selectedIndex].value;
-
-  document.getElementsByClassName("results-box")[0].innerHTML = "";
-
-  fetch("http://localhost:4000/", {
-    method: 'post', 
-    body: JSON.stringify({location: location, distance: distance, price: price, rating: rating, wifi: wifi}),
-    mode: 'cors',
-    headers: new Headers({
-      'Content-Type': 'application/json'
-    })
-  })
-  .then(response => response.json())
-  .then(json => {
-    const container = document.getElementsByClassName("results-box")[0];
-    const cafes = json.cafes;
-
-    for (var i = 0; i < cafes.length; i++) {
-      let individualCafe = document.createElement("div");
-      let root = createRoot(individualCafe);
-      root.render(<Cafe  website={cafes[i].website} name={cafes[i].name} price={cafes[i].price} wifi={cafes[i].wifi} phone={cafes[i].phone} rating={cafes[i].rating} distance={cafes[i].distance} address={cafes[i].address} />);
-      container.appendChild(individualCafe);
-    }
-    document.getElementById("num-results").innerHTML = json.nums + " cafes matched.";
-  })
-}
-
 function App() {
+  const [num_cafes, setNums] = useState("# of cafes will show here");
+
+  function search() {
+    let location = document.getElementById("autocomplete").value;
+    let distance = document.getElementsByName("distance")[0]
+    distance = distance.options[distance.selectedIndex].value;
+    let price = document.getElementsByName("price")[0]
+    price = price.options[price.selectedIndex].value;
+    let rating = document.getElementsByName("rating")[0]
+    rating = rating.options[rating.selectedIndex].value;
+    let wifi = document.getElementsByName("wifi")[0]
+    wifi = wifi.options[wifi.selectedIndex].value;
+
+    document.getElementsByClassName("results-box")[0].innerHTML = "";
+
+    fetch("http://localhost:4000/", {
+      method: 'post', 
+      body: JSON.stringify({location: location, distance: distance, price: price, rating: rating, wifi: wifi}),
+      mode: 'cors',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    })
+    .then(response => response.json())
+    .then(json => {
+      const container = document.getElementsByClassName("results-box")[0];
+      const cafes = json.cafes;
+
+      for (var i = 0; i < cafes.length; i++) {
+        let individualCafe = document.createElement("div");
+        let root = createRoot(individualCafe);
+        root.render(<Cafe  website={cafes[i].website} name={cafes[i].name} price={cafes[i].price} wifi={cafes[i].wifi} phone={cafes[i].phone} rating={cafes[i].rating} distance={cafes[i].distance} address={cafes[i].address} />);
+        container.appendChild(individualCafe);
+      }
+      setNums(json.nums + " cafes matched.");
+    })
+  }
+
   return (
     <div className="App">
       <div className="berkeley-image">
@@ -96,7 +99,7 @@ function App() {
 
                 <div className="col-md-8">
                   <div id="num-results">
-                    # of cafes will show here
+                    {num_cafes}
                   </div>
                   <div className="results-box container">
                     Results will show here
