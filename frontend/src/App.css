@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+/* Start Top Half */
+body {
+  margin: 0;
+  margin-bottom: 4%;
+  border: none;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #DDD5C7;
+}
+
+.berkeley-image {
+  height: 50vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("../public/berkeley.jpg");
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+
+.top {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.top h1 {
+  font-size: 65px;
+  letter-spacing: 0px;
+  margin: 0 0 5px;
+  font-weight: 700;
+}
+
+.top p {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 300;
+}
+/* End Top Half */
+
+/* Start Bottom Half */
+.bottom{
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+#filter{
+  font-weight: 700;
+  color: #22333B;
+  font-size: 28px;
+}
+
+.a-filter{
+  font-size: 22px;
+}
+
+.drop-down{
+  background-color: white;
+}
+
+#search-button{
+  background-color: #A9927D;
+  font-weight: 700;
+  color: white;
+  border: black solid 3px;
+  font-size: 25px;
+  transition-duration: 0.4s;
+}
+
+#search-button:hover {
+  background-color: #423E3B;
+}
+
+.grey-button {
+  background-color: white;
+}
+
+.grey-button:hover{
+  background-color: #D9D7DD;
+}
+
+#location_popup{
+  color: red;
+  display: none;
+}
+
+/* Results Parts Start*/
+.results-box{
+  background-color: white;
+  color: black;
+  border: 5px solid black;
+  padding: 2%;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.restaurant{
+  border: 3px solid black;
+  margin-top: 2%;
+}
+
+.restaurant-name{
+  font-weight: bold;
+}
+
+.address{
+  text-align: right;
+}
+
+.rating{
+  text-align: right;
+}
+
+.price{
+  text-align: right;
+}
+
+#no-results{
+  text-align: center;
+  display: block;
+}
+
+.url{
+  text-decoration: none;
+}
+
+#num-results{
+  border: 5px solid black;
+  background-color: #E5D4ED;
+  text-align: center;
+}
