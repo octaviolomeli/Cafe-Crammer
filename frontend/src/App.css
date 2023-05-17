@@ -7,7 +7,7 @@ body {
   border: none;
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
-  background-color: #DDD5C7;
+  background-color: #c6c7cc;
 }
 
 .berkeley-image {
@@ -75,7 +75,7 @@ body {
 }
 
 #search-button{
-  background-color: #A9927D;
+  background-color: #2f63f5;
   font-weight: 700;
   color: white;
   border: black solid 3px;
