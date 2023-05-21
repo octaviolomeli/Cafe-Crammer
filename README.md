@@ -15,4 +15,12 @@
       <li>Google Places API</li>
     </ul>
 </details>
-<hr>
+<details>
+  <summary>
+    Photos
+  </summary>
+  
+  ![Home Page](https://github.com/octaviolomeli/Cafe-Crammer/blob/main/main.png?raw=true)
+</details>
+
+
