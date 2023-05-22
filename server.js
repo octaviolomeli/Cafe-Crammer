@@ -12,14 +12,6 @@ app.use(cors({
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json())
 
-app.get('', (req, res) => {
-    res.redirect('http://localhost:3000/');
-})
-
-app.get('/', (req, res) => {
-    res.redirect('http://localhost:3000/');
-})
-
 app.post('/', (req, res) => {
     // filter a cafe according to user preference
     function filter_cafe(cafe){
