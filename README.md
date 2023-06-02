@@ -20,7 +20,7 @@
     Photos
   </summary>
   
-  ![Home Page](https://github.com/octaviolomeli/Cafe-Crammer/blob/main/main.png?raw=true)
+  ![Home Page](https://github.com/octaviolomeli/Cafe-Crammer/blob/main/home.jpeg?raw=true)
 </details>
 
 
